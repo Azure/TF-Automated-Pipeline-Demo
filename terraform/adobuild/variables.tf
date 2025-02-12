@@ -36,3 +36,13 @@ variable "production_subscription_id" {
 variable "development_subscription_id" {
   type = string
 }
+
+variable prod_kv_name {
+  description = "The name of the production key vault"
+  type        = string
+}
+
+variable dev_kv_name {
+  description = "The name of the development key vault"
+  type        = string
+}

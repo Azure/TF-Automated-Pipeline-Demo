@@ -9,7 +9,7 @@ data azurerm_resource_group dev_rg {
 
 data azurerm_key_vault dev {
   provider = azurerm.dev
-  name                = "dev-kv-demo"
+  name                = var.dev_kv_name
   resource_group_name = data.azurerm_resource_group.dev_rg.name
   depends_on = [ data.azurerm_resource_group.dev_rg ]
 }
@@ -68,7 +68,7 @@ resource azuredevops_variable_group dev_secrets {
   depends_on = [ azuredevops_serviceendpoint_azurerm.dev, data.azurerm_key_vault.dev, data.azurerm_key_vault_secret.dev_client_id, data.azurerm_key_vault_secret.dev_client_secret, data.azurerm_key_vault_secret.dev_tenant_id, data.azurerm_key_vault_secret.dev_subscription_id ] 
 
   key_vault {
-    name = "dev-kv-demo"
+    name = var.dev_kv_name
     service_endpoint_id = azuredevops_serviceendpoint_azurerm.dev.id
   }
 
@@ -105,7 +105,7 @@ data azurerm_resource_group prod_rg {
 
 data azurerm_key_vault prod {
   provider = azurerm.prod
-  name                = "prod-kv-demo"
+  name                = var.prod_kv_name
   resource_group_name = data.azurerm_resource_group.prod_rg.name
   depends_on = [ data.azurerm_resource_group.prod_rg ]
 }
@@ -164,7 +164,7 @@ resource azuredevops_variable_group prod_secrets {
   depends_on = [ azuredevops_serviceendpoint_azurerm.prod, data.azurerm_key_vault.prod, data.azurerm_key_vault_secret.prod_client_id, data.azurerm_key_vault_secret.prod_client_secret, data.azurerm_key_vault_secret.prod_tenant_id, data.azurerm_key_vault_secret.prod_subscription_id ] 
 
   key_vault {
-    name = "prod-kv-demo"
+    name = var.prod_kv_name
     service_endpoint_id = azuredevops_serviceendpoint_azurerm.prod.id
   }
 

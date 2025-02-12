@@ -66,11 +66,9 @@ variable dev_storage_account_name {
 variable prod_kv_name {
   description = "The name of the production key vault"
   type        = string
-  default = "prod-kv-demo"
 }
 
 variable dev_kv_name {
   description = "The name of the development key vault"
   type        = string
-  default = "dev-kv-demo"
 }
