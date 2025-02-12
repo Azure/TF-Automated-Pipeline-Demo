@@ -15,6 +15,16 @@ default_reviewers = [
   "<your@email.here>"
 ]
 
+
+#   *** NO CHANGES SHOULD BE NECESSARY BELOW THIS LINE ***
+#   These are Key Vault names for the development and production environments, if you changed the names in the 'azureprep' directory,
+#   you will need to update them here!  Terraform will fail deploying the adobuild directory if the names do not match the Key Vaults
+#   created in the 'azureprep' directory.
+
+prod_kv_name = "prod-kv-demo"
+
+dev_kv_name = "dev-kv-demo"
+
 # *** NO CHANGES SHOULD BE MADE BELOW THIS LINE ***
 
 # For demo purposes, we only require 1 reviewer, but you can increase this number in a production environment
